@@ -18,19 +18,11 @@ final class FetchDataController: ObservableObject {
             _ = try await fetchNearestSettlements()
             _ = try await fetchCarrierInfo()
             _ = try await fetchCopyrightInfo()
-            _ = try await fetchAllStationsList()
-               //let threadInfo = try await fetchThreadInfo()
-               try await fetchSearchRoutes()
-               try await fetchScheduleStation()
-            do {
-                   let threadInfo = try await fetchThreadInfo()
-                   print("✅ Успешно получена информация о нитке")
-               } catch let DecodingError.dataCorrupted(context) {
-                   print("❌ Ошибка декодирования: \(context.debugDescription)")
-                   if let codingPath = context.codingPath.last {
-                       print("Проблемное поле: \(codingPath.stringValue)")
-                   }
-               }
+            _ =  try await fetchAllStationsList()
+            _ = try await fetchThreadInfo()
+            _ = try await fetchSearchRoutes()
+            _ = try await fetchScheduleStation()
+
         } catch {
             print("Ошибка при выполнении запросов: \(error.localizedDescription)")
             print("Технические детали: \(error)")
@@ -86,8 +78,8 @@ final class FetchDataController: ObservableObject {
     }
     
     func fetchScheduleStation() async throws {
-        let result = try await service.getScheduleStation(station: "s9600213", transportTypes: .train,
-                    date: "2025-03-01")
+        let result = try await service.getScheduleStation(station: "s9600213", transportTypes: 
+            .train, date: "2025-03-01")
         print("✅ Получено расписание с \(result.schedule?.count ?? 0) рейсами")
     }
 }

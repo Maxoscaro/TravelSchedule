@@ -50,28 +50,28 @@ final class TravelScheduleService {
     }
     
     func getCarrier(code: String) async throws -> Carrier {
-           return try await carrierService.getCarrier(code: code)
-       }
-       
-       func getCopyright() async throws -> Copyright {
-           return try await copyrightService.getCopyright()
-       }
-       
+        return try await carrierService.getCarrier(code: code)
+    }
+    
+    func getCopyright() async throws -> Copyright {
+        return try await copyrightService.getCopyright()
+    }
+    
     func getStationsList() async throws -> StationsList {
         return try await stationsListService.getStationsList()
     }
-
+    
     func getThreadStation(uid: String) async throws -> Thread {
         return try await treadStationsService.getThreadInfo(uid: uid)
     }
-       
-       func searchRoutesService(from startStation: String, to endStation: String, transportTypes: Operations.searchRoutes.Input.Query.transport_typesPayload?, date: String) async throws -> Search {
-           return try await searchRoutesService.searchRoutes(from: startStation, to: endStation, transportTypes: transportTypes, date: date)
-       }
-       
-       func getScheduleStation(station: String, transportTypes: Operations.getStationSchedule.Input.Query.transport_typesPayload?, date: String) async throws -> Schedule {
-           return try await stationScheduleService.getScheduleStation(station: station, transportTypes: transportTypes, date: date)
-       }
-       
-       
+    
+    func searchRoutesService(from startStation: String, to endStation: String, transportTypes: Operations.searchRoutes.Input.Query.transport_typesPayload?, date: String) async throws -> Search {
+        return try await searchRoutesService.searchRoutes(from: startStation, to: endStation, transportTypes: transportTypes, date: date)
+    }
+    
+    func getScheduleStation(station: String, transportTypes: Operations.getStationSchedule.Input.Query.transport_typesPayload?, date: String) async throws -> Schedule {
+        return try await stationScheduleService.getScheduleStation(station: station, transportTypes: transportTypes, date: date)
+    }
+    
+    
 }

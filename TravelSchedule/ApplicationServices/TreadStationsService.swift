@@ -26,9 +26,11 @@ final class TreadStationsService: ThreadStationsServiceProtocol {
         let response = try await client.getThreadInfo(
             query: .init(
                 apikey: apikey,
-                uid: uid
+                uid: uid,
+                format: .json
             )
         )
+        
         return try response.ok.body.json
     }
 }

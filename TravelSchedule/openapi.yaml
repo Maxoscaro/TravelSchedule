@@ -760,12 +760,13 @@ components:
       properties:
         thread:
           $ref: '#/components/schemas/Thread'
-        stops:
+        
+        pagination:
+          $ref: '#/components/schemas/Pagination'
+        stations:
           type: array
           items:
-            $ref: '#/components/schemas/Stop'
-        interval_schedule:
-          $ref: '#/components/schemas/IntervalSchedule'
+            $ref: '#/components/schemas/Station'
             
     Stop:
       type: object
