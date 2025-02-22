@@ -666,13 +666,19 @@ components:
     Settlement:
       type: object
       properties:
+        distance:
+          type: number
+        code:
+          type: string
         title:
           type: string
-        codes:
-          type: object
-        latitude:
+        popular_title:
+          type: string
+        short_title:
+          type: string
+        lat:
           type: number
-        longitude:
+        lng:
           type: number
         
     CarrierInfo:

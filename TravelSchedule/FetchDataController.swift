@@ -18,11 +18,11 @@ final class FetchDataController: ObservableObject {
             _ = try await fetchNearestSettlements()
             _ = try await fetchCarrierInfo()
             _ = try await fetchCopyrightInfo()
-            _ =  try await fetchAllStationsList()
+            _ = try await fetchAllStationsList()
             _ = try await fetchThreadInfo()
             _ = try await fetchSearchRoutes()
             _ = try await fetchScheduleStation()
-
+            
         } catch {
             print("Ошибка при выполнении запросов: \(error.localizedDescription)")
             print("Технические детали: \(error)")
@@ -38,10 +38,8 @@ final class FetchDataController: ObservableObject {
     }
     
     func fetchNearestSettlements() async throws -> NearestSettlement {
-        let result = try await service.getNearestSettlement(lat: 59.864177, lng: 30.319163, distance: 50)
-        if let count = result.settlements?.count {
-            print("✅ Найдено \(count) населенных пунктов поблизости")
-        }
+        let result = try await service.getNearestSettlement(lat: 54.106677, lng: 39.601726, distance: 50)
+        print("✅ Найдено \(String(describing: result.settlements?.count)) населенных пунктов поблизости")
         return result
     }
     
