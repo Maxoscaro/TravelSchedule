@@ -650,9 +650,9 @@ components:
           type: string
         transport_type:
           type: string
-        latitude:
+        lat:
           type: number
-        longitude:
+        lng:
           type: number
         
     Settlements:
