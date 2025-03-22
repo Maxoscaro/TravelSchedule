@@ -6,8 +6,12 @@
 //
 
 import SwiftUI
+import OpenAPIURLSession
 
-struct ContentView: View {
+struct MainScreenView: View {
+    
+    @StateObject private var viewModel = FetchDataController()
+    
     var body: some View {
         VStack {
             Image(systemName: "globe")
@@ -16,9 +20,14 @@ struct ContentView: View {
             Text("Hello, world!")
         }
         .padding()
+        .onAppear {
+            Task {
+                                await viewModel.demonstrateAllServices()
+                            }
+        }
     }
 }
 
 #Preview {
-    ContentView()
+    MainScreenView()
 }
