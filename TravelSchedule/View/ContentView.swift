@@ -24,7 +24,6 @@ struct ContentView: View {
     }
     
     var body: some View {
-        
         NavigationStack(path: $navigationModel.path) {
             TabView {
                 MainScreenView()
