@@ -13,6 +13,7 @@ struct ContentView: View {
     @StateObject var stationSelectionViewModel = StationSelectionViewModel()
     @StateObject private var filterViewModel = FilterViewModel()
     @StateObject private var themeService = ThemeService()
+    @State private var navigationId = UUID()
     
     init() {
         let appearance = UITabBarAppearance()
@@ -84,6 +85,7 @@ struct ContentView: View {
             }
             .tint(.blackDay)
         }
+        .id(navigationId)
     }
 }
 
