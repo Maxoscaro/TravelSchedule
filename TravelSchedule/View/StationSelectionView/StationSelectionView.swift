@@ -8,9 +8,9 @@
 import SwiftUI
 
 struct StationSelectionView: View {
-    
-    @EnvironmentObject var viewModel: StationSelectionViewModel
+    @StateObject var viewModel = StationSelectionViewModel()
     @EnvironmentObject var navigationModel: NavigationViewModel
+    
     let city: City
     var isDeparture: Bool
     

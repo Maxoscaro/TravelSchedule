@@ -38,7 +38,3 @@ struct RadioButtonRow: View {
         .buttonStyle(PlainButtonStyle())
     }
 }
-
-//#Preview {
-//    RadioButtonRow(title: "Title", isSelected: false, action: action)
-//}

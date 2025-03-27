@@ -3,8 +3,8 @@ import SwiftUI
 struct MainScreenView: View {
     
     @State private var noInternet = true
-    @EnvironmentObject var navigationModel: NavigationViewModel
     @StateObject var storyViewModel = StoryScreenViewModel()
+    @EnvironmentObject var navigationModel: NavigationViewModel
     @EnvironmentObject var citySelectionViewModel: CitySelectionViewModel
     @EnvironmentObject var filterViewModel: FilterViewModel
     

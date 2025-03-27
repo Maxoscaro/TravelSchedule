@@ -11,7 +11,7 @@ struct CarriersScreenView: View {
     
     @EnvironmentObject var navigationModel: NavigationViewModel
     @EnvironmentObject var filterViewModel: FilterViewModel
-    
+
     var body: some View {
         ZStack {
             VStack {

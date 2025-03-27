@@ -9,7 +9,7 @@ import SwiftUI
 
 struct CitySelectionView: View {
     @Environment(\.dismiss) private var dismiss
-    @EnvironmentObject  var viewModel: CitySelectionViewModel
+    @StateObject var viewModel = CitySelectionViewModel()
     @EnvironmentObject var navigationModel: NavigationViewModel
 
     var isDeparture: Bool

@@ -12,7 +12,7 @@ struct FilterScreenView: View {
     @Environment(\.dismiss) private var dismiss
     @EnvironmentObject var navigationModel: NavigationViewModel
     @EnvironmentObject var filterViewModel: FilterViewModel
-
+    
     var body: some View {
         VStack(alignment: .leading, spacing: 30) {
             
@@ -65,10 +65,6 @@ struct FilterScreenView: View {
         .navigationBarStyle(dismissAction: {
             navigationModel.back()
         })
-
-//        .onAppear {
-//            filterViewModel.loadCurrentFilters()
-//        }
     }
 }
   

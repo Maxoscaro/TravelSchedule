@@ -47,6 +47,4 @@ struct CheckBoxRow: View {
     }
 }
 
-//#Preview {
-//    CheckBoxRow()
-//}
+
