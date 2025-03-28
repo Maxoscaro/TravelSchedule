@@ -16,7 +16,7 @@ struct UserAgreementView: View {
               WebView(urlString: UserAgreementView.urlString)
           }
           .navigationTitle("Пользовательское соглашение")
-          .navigationBarStyle(dismissAction: {
+          .customBackButtonStyle(dismissAction: {
               dismiss()
           })
           .background(.whiteDay)

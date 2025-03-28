@@ -74,7 +74,7 @@ struct CitySelectionView: View {
             .listStyle(PlainListStyle())
         }
         .navigationTitle("Выбор города")
-        .navigationBarStyle(dismissAction: {
+        .customBackButtonStyle(dismissAction: {
             navigationModel.back()
         })
     }

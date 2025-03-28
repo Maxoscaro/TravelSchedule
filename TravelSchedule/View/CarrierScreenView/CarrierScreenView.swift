@@ -54,7 +54,7 @@ struct CarrierScreenView: View {
         .padding()
         
         .navigationBarTitle("Информация о перевозчике", displayMode: .inline)
-        .navigationBarStyle(dismissAction: {
+        .customBackButtonStyle(dismissAction: {
             navigationModel.back()
         })
     }

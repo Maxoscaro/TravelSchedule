@@ -5,7 +5,7 @@
 
 import SwiftUI
 
-struct NavigationBarModel: ViewModifier {
+struct CustomBackButtonViewModifier: ViewModifier {
     var dismissAction: () -> Void
     
     func body(content: Content) -> some View {
@@ -26,7 +26,7 @@ struct NavigationBarModel: ViewModifier {
 }
 
 extension View {
-    func navigationBarStyle(dismissAction: @escaping () -> Void) -> some View {
-        self.modifier(NavigationBarModel(dismissAction: dismissAction))
+    func customBackButtonStyle(dismissAction: @escaping () -> Void) -> some View {
+        self.modifier(CustomBackButtonViewModifier(dismissAction: dismissAction))
     }
 }

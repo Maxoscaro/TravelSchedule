@@ -36,7 +36,7 @@
 		B5EA26CF2D8D90E200D39349 /* NavigationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5EA26C82D8D90E200D39349 /* NavigationViewModel.swift */; };
 		B5EA26D02D8D90E200D39349 /* CityModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5EA26C92D8D90E200D39349 /* CityModel.swift */; };
 		B5EA26D12D8D90E200D39349 /* ScheduleModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5EA26CA2D8D90E200D39349 /* ScheduleModel.swift */; };
-		B5EA26D22D8D90E200D39349 /* NavigationBarModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5EA26CB2D8D90E200D39349 /* NavigationBarModel.swift */; };
+		B5EA26D22D8D90E200D39349 /* CustomBackButtonViewModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5EA26CB2D8D90E200D39349 /* CustomBackButtonViewModifier.swift */; };
 		B5EA26D32D8D90E200D39349 /* StoriesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5EA26CC2D8D90E200D39349 /* StoriesModel.swift */; };
 		B5EA26D42D8D90E200D39349 /* StationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5EA26CD2D8D90E200D39349 /* StationModel.swift */; };
 		B5EA26D52D8D90E200D39349 /* CarrierModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5EA26CE2D8D90E200D39349 /* CarrierModel.swift */; };
@@ -46,8 +46,8 @@
 		B5EA26EF2D8D911B00D39349 /* InternetErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5EA26DC2D8D911B00D39349 /* InternetErrorView.swift */; };
 		B5EA26F02D8D911B00D39349 /* ServerErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5EA26DD2D8D911B00D39349 /* ServerErrorView.swift */; };
 		B5EA26F12D8D911B00D39349 /* FilterScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5EA26DF2D8D911B00D39349 /* FilterScreenView.swift */; };
-		B5EA26F22D8D911B00D39349 /* RadioButtonRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5EA26E02D8D911B00D39349 /* RadioButtonRow.swift */; };
-		B5EA26F32D8D911B00D39349 /* CheckBoxRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5EA26E12D8D911B00D39349 /* CheckBoxRow.swift */; };
+		B5EA26F22D8D911B00D39349 /* RadioButtonRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5EA26E02D8D911B00D39349 /* RadioButtonRowView.swift */; };
+		B5EA26F32D8D911B00D39349 /* CheckBoxRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5EA26E12D8D911B00D39349 /* CheckBoxRowView.swift */; };
 		B5EA26F42D8D911B00D39349 /* CitySelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5EA26E22D8D911B00D39349 /* CitySelectionView.swift */; };
 		B5EA26F52D8D911B00D39349 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5EA26E42D8D911B00D39349 /* SettingsView.swift */; };
 		B5EA26F62D8D911B00D39349 /* UserAgreementView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5EA26E52D8D911B00D39349 /* UserAgreementView.swift */; };
@@ -107,7 +107,7 @@
 		B5EA26C82D8D90E200D39349 /* NavigationViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationViewModel.swift; sourceTree = "<group>"; };
 		B5EA26C92D8D90E200D39349 /* CityModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CityModel.swift; sourceTree = "<group>"; };
 		B5EA26CA2D8D90E200D39349 /* ScheduleModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScheduleModel.swift; sourceTree = "<group>"; };
-		B5EA26CB2D8D90E200D39349 /* NavigationBarModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationBarModel.swift; sourceTree = "<group>"; };
+		B5EA26CB2D8D90E200D39349 /* CustomBackButtonViewModifier.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomBackButtonViewModifier.swift; sourceTree = "<group>"; };
 		B5EA26CC2D8D90E200D39349 /* StoriesModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoriesModel.swift; sourceTree = "<group>"; };
 		B5EA26CD2D8D90E200D39349 /* StationModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StationModel.swift; sourceTree = "<group>"; };
 		B5EA26CE2D8D90E200D39349 /* CarrierModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CarrierModel.swift; sourceTree = "<group>"; };
@@ -117,8 +117,8 @@
 		B5EA26DC2D8D911B00D39349 /* InternetErrorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InternetErrorView.swift; sourceTree = "<group>"; };
 		B5EA26DD2D8D911B00D39349 /* ServerErrorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServerErrorView.swift; sourceTree = "<group>"; };
 		B5EA26DF2D8D911B00D39349 /* FilterScreenView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilterScreenView.swift; sourceTree = "<group>"; };
-		B5EA26E02D8D911B00D39349 /* RadioButtonRow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RadioButtonRow.swift; sourceTree = "<group>"; };
-		B5EA26E12D8D911B00D39349 /* CheckBoxRow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CheckBoxRow.swift; sourceTree = "<group>"; };
+		B5EA26E02D8D911B00D39349 /* RadioButtonRowView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RadioButtonRowView.swift; sourceTree = "<group>"; };
+		B5EA26E12D8D911B00D39349 /* CheckBoxRowView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CheckBoxRowView.swift; sourceTree = "<group>"; };
 		B5EA26E22D8D911B00D39349 /* CitySelectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CitySelectionView.swift; sourceTree = "<group>"; };
 		B5EA26E42D8D911B00D39349 /* SettingsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		B5EA26E52D8D911B00D39349 /* UserAgreementView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserAgreementView.swift; sourceTree = "<group>"; };
@@ -180,6 +180,7 @@
 		B52896782D54C18300A41FDA /* TravelSchedule */ = {
 			isa = PBXGroup;
 			children = (
+				B5F8333D2D96BC950088C634 /* ViewModifiers */,
 				B52896792D54C18300A41FDA /* TravelScheduleApp.swift */,
 				B5EA26FD2D8D91FE00D39349 /* Service */,
 				B5EA26D62D8D911B00D39349 /* View */,
@@ -253,7 +254,6 @@
 			children = (
 				B5EA26C92D8D90E200D39349 /* CityModel.swift */,
 				B5EA26CA2D8D90E200D39349 /* ScheduleModel.swift */,
-				B5EA26CB2D8D90E200D39349 /* NavigationBarModel.swift */,
 				B5EA26CC2D8D90E200D39349 /* StoriesModel.swift */,
 				B5EA26CD2D8D90E200D39349 /* StationModel.swift */,
 				B5EA26CE2D8D90E200D39349 /* CarrierModel.swift */,
@@ -300,8 +300,8 @@
 			isa = PBXGroup;
 			children = (
 				B5EA26DF2D8D911B00D39349 /* FilterScreenView.swift */,
-				B5EA26E02D8D911B00D39349 /* RadioButtonRow.swift */,
-				B5EA26E12D8D911B00D39349 /* CheckBoxRow.swift */,
+				B5EA26E02D8D911B00D39349 /* RadioButtonRowView.swift */,
+				B5EA26E12D8D911B00D39349 /* CheckBoxRowView.swift */,
 			);
 			path = FilterScreenView;
 			sourceTree = "<group>";
@@ -348,6 +348,14 @@
 				B5EA26E62D8D911B00D39349 /* StationSelectionView.swift */,
 			);
 			path = StationSelectionView;
+			sourceTree = "<group>";
+		};
+		B5F8333D2D96BC950088C634 /* ViewModifiers */ = {
+			isa = PBXGroup;
+			children = (
+				B5EA26CB2D8D90E200D39349 /* CustomBackButtonViewModifier.swift */,
+			);
+			path = ViewModifiers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -514,16 +522,16 @@
 				B5EA26EC2D8D911B00D39349 /* CarrierCard.swift in Sources */,
 				B5EA26F12D8D911B00D39349 /* FilterScreenView.swift in Sources */,
 				B5EA26F02D8D911B00D39349 /* ServerErrorView.swift in Sources */,
-				B5EA26F22D8D911B00D39349 /* RadioButtonRow.swift in Sources */,
+				B5EA26F22D8D911B00D39349 /* RadioButtonRowView.swift in Sources */,
 				B5EA26D52D8D90E200D39349 /* CarrierModel.swift in Sources */,
 				B5EA26EE2D8D911B00D39349 /* CarrierScreenView.swift in Sources */,
 				B5EA26C42D8D90BE00D39349 /* StationSelectionViewModel.swift in Sources */,
 				B55348B12D67795D0079101F /* TreadStationsService.swift in Sources */,
 				B5EA26FB2D8D911B00D39349 /* ContentView.swift in Sources */,
 				B55348AF2D6774160079101F /* StationListService.swift in Sources */,
-				B5EA26F32D8D911B00D39349 /* CheckBoxRow.swift in Sources */,
+				B5EA26F32D8D911B00D39349 /* CheckBoxRowView.swift in Sources */,
 				B5EA26F92D8D911B00D39349 /* StoriesView.swift in Sources */,
-				B5EA26D22D8D90E200D39349 /* NavigationBarModel.swift in Sources */,
+				B5EA26D22D8D90E200D39349 /* CustomBackButtonViewModifier.swift in Sources */,
 				B5EA26FA2D8D911B00D39349 /* MainScreenView.swift in Sources */,
 				B5EA26CF2D8D90E200D39349 /* NavigationViewModel.swift in Sources */,
 				B5EA26C12D8D90BE00D39349 /* CitySelectionViewModel.swift in Sources */,

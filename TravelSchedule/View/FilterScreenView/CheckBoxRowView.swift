@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct CheckBoxRow: View {
+struct CheckBoxRowView: View {
     let title: String
     let isSelected: Bool
     let action: () -> Void

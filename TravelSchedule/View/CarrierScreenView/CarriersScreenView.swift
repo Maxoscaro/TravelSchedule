@@ -72,7 +72,7 @@ struct CarriersScreenView: View {
                          }
                      }
                      .padding()
-                     .navigationBarStyle(dismissAction: {
+                     .customBackButtonStyle(dismissAction: {
                          navigationModel.back()
                      })
                      .onAppear {

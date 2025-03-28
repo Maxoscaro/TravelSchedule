@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct RadioButtonRow: View {
+struct RadioButtonRowView: View {
     let title: String
     let isSelected: Bool
     let action: () -> Void

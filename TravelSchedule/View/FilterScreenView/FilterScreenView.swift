@@ -22,7 +22,7 @@ struct FilterScreenView: View {
             
             VStack(alignment: .leading, spacing: 20) {
                 ForEach(filterViewModel.timePeriods, id: \.self) { period in
-                    CheckBoxRow(title: period, isSelected:  filterViewModel.selectedTimes.contains(period)) {
+                    CheckBoxRowView(title: period, isSelected:  filterViewModel.selectedTimes.contains(period)) {
                         filterViewModel.toggleTimeSelection(for: period)
                     }
                 }
@@ -33,11 +33,11 @@ struct FilterScreenView: View {
                 .padding(.top, 10)
             
             VStack(alignment: .leading, spacing: 20) {
-                RadioButtonRow(title: "Да", isSelected: filterViewModel.showTransfers == true) {
+                RadioButtonRowView(title: "Да", isSelected: filterViewModel.showTransfers == true) {
                     filterViewModel.setShowTransfers(value: true)
                 }
                 
-                RadioButtonRow(title: "Нет", isSelected:  filterViewModel.showTransfers == false) {
+                RadioButtonRowView(title: "Нет", isSelected:  filterViewModel.showTransfers == false) {
                     filterViewModel.setShowTransfers(value: false)
                 }
             }
@@ -62,7 +62,7 @@ struct FilterScreenView: View {
             }
         }
         .padding(.horizontal, 20)
-        .navigationBarStyle(dismissAction: {
+        .customBackButtonStyle(dismissAction: {
             navigationModel.back()
         })
     }

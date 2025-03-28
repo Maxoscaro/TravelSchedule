@@ -73,7 +73,7 @@ struct StationSelectionView: View {
         }
         
         .navigationTitle("Выбор станции")
-        .navigationBarStyle(dismissAction: {
+        .customBackButtonStyle(dismissAction: {
             navigationModel.back()
         })
         .onAppear {

@@ -12,6 +12,3 @@ struct City:  Identifiable, Hashable {
     let name: String
     let stations: [Stations]
 }
-
-
-
