@@ -17,6 +17,7 @@ enum ScheduleScreens: Hashable {
     case carrierList
     case carrierInfo(carrier: CarrierLocal)
     case filterSchedule
+    case storiesScreenMainView(index: Int)
     
 }
 
