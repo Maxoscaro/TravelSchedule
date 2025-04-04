@@ -12,6 +12,7 @@ struct ContentView: View {
     @StateObject private var themeService = ThemeService()
     @StateObject var navigationModel = NavigationViewModel()
     @StateObject private var filterViewModel = FilterViewModel()
+    @StateObject private var storyViewModel = StoryScreenViewModel()
     
     init() {
         let appearance = UITabBarAppearance()
@@ -62,6 +63,8 @@ struct ContentView: View {
                     
                 case .filterSchedule:
                     FilterScreenView()
+                case .storiesScreenMainView(let index):
+                    StoriesScreenMainView(story: storyViewModel.stories[index], initialIndex: index)
                 }
             }
             .tint(.blackDay)
@@ -69,6 +72,7 @@ struct ContentView: View {
         .environmentObject(themeService)
         .environmentObject(filterViewModel)
         .environmentObject(navigationModel)
+        .environmentObject(storyViewModel)
     }
 }
 

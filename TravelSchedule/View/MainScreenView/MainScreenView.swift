@@ -3,7 +3,7 @@ import SwiftUI
 struct MainScreenView: View {
     
     @State private var noInternet = true
-    @StateObject var storyViewModel = StoryScreenViewModel()
+    @EnvironmentObject var storyViewModel: StoryScreenViewModel
     @EnvironmentObject var navigationModel: NavigationViewModel
     @EnvironmentObject var citySelectionViewModel: CitySelectionViewModel
     @EnvironmentObject var filterViewModel: FilterViewModel
@@ -13,8 +13,18 @@ struct MainScreenView: View {
             VStack {
                 ScrollView(.horizontal, showsIndicators: false) {
                     HStack(spacing: 10) {
-                        ForEach(storyViewModel.stories) { story in
-                            StoriesView(story: story)
+                        ForEach(0..<storyViewModel.stories.count, id: \.self) { index in
+                            if storyViewModel.stories[index].isViewed {
+                                ViewedStoriesView(story: storyViewModel.stories[index])
+                                    .onTapGesture {
+                                        navigationModel.open(.storiesScreenMainView(index: index))
+                                    }
+                            } else {
+                                StoriesView(story: storyViewModel.stories[index])
+                                    .onTapGesture {
+                                        navigationModel.open(.storiesScreenMainView(index: index))
+                                    }
+                            }
                         }
                     }
                     .padding(.vertical)
@@ -77,4 +87,5 @@ struct MainScreenView: View {
         .environmentObject(CitySelectionViewModel())
         .environmentObject(NavigationViewModel())
         .environmentObject(FilterViewModel())
+        .environmentObject(StoryScreenViewModel())
 }
