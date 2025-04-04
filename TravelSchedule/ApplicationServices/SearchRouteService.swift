@@ -13,7 +13,7 @@ protocol SearchRoutesServiceProtocol {
     func searchRoutes(from: String, to: String, transportTypes: Operations.searchRoutes.Input.Query.transport_typesPayload?, date: String) async throws -> Search
 }
 
-final class SearchRoutesService: SearchRoutesServiceProtocol {
+actor SearchRoutesService: SearchRoutesServiceProtocol, Sendable {
     private let client: Client
     private let apikey: String
     

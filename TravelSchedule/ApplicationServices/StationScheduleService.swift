@@ -13,7 +13,7 @@ protocol StationScheduleServiceProtocol {
     func getScheduleStation(station: String, transportTypes: Operations.getStationSchedule.Input.Query.transport_typesPayload?, date: String) async throws -> Schedule
 }
 
-final class StationScheduleService: StationScheduleServiceProtocol {
+actor StationScheduleService: StationScheduleServiceProtocol, Sendable {
     private let client: Client
     private let apikey: String
     

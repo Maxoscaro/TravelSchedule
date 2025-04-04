@@ -6,7 +6,7 @@
 //
 import Foundation
 
-struct ScheduleLocal: Hashable, Identifiable {
+struct ScheduleLocal: Hashable, Identifiable, Sendable {
     let id = UUID()
     let date: String
     let departureTime: String
