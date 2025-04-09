@@ -10,4 +10,5 @@ import SwiftUI
 struct Stations: Identifiable, Hashable, Sendable {
     let id = UUID()
     let name: String
+    let code: String
 }

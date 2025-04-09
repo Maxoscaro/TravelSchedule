@@ -8,7 +8,7 @@
 import Foundation
 import OpenAPIURLSession
 
-final class TravelScheduleService {
+actor TravelScheduleService: Sendable {
     
     static let shared = TravelScheduleService()
     
@@ -32,12 +32,12 @@ final class TravelScheduleService {
         self.stationScheduleService = StationScheduleService(client: client, apikey: apikey)
     }
     
-    convenience init() {
+     init() {
         let client = Client(
             serverURL: try! Servers.Server1.url(),
             transport: URLSessionTransport()
         )
-        let apikey = "efedbf93-8799-4e68-98cf-353aa14c3d12"
+        let apikey = Constants.apikey
         self.init(client: client, apikey: apikey)
     }
     
@@ -66,12 +66,10 @@ final class TravelScheduleService {
     }
     
     func searchRoutesService(from startStation: String, to endStation: String, transportTypes: Operations.searchRoutes.Input.Query.transport_typesPayload?, date: String) async throws -> Search {
-        return try await searchRoutesService.searchRoutes(from: startStation, to: endStation, transportTypes: transportTypes, date: date)
+        return try await searchRoutesService.searchRoutes(from: startStation, to: endStation)
     }
     
     func getScheduleStation(station: String, transportTypes: Operations.getStationSchedule.Input.Query.transport_typesPayload?, date: String) async throws -> Schedule {
         return try await stationScheduleService.getScheduleStation(station: station, transportTypes: transportTypes, date: date)
     }
-    
-    
 }

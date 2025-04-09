@@ -38,54 +38,63 @@ struct CitySelectionView: View {
             .cornerRadius(10)
             .padding()
             
-            if viewModel.filteredCities.isEmpty && !viewModel.searchText.isEmpty {
-                
+            
+            if viewModel.isLoading {
+                ProgressView()
+                    .frame(maxWidth: .infinity, maxHeight: .infinity)
+            } else if
+                viewModel.filteredCities.isEmpty && !viewModel.searchText.isEmpty {
                 Text("Город не найден")
                     .font(.system(size: 24))
                     .fontWeight(.bold)
                     .frame(maxWidth: .infinity, maxHeight: .infinity)
             }
-            
-            List(viewModel.filteredCities) { city in
-                
-                HStack {
-                    Text(city.name)
-                        .font(.system(size: 17))
-                    Spacer()
-                    Image(systemName: "chevron.right")
+            else {
+                List(viewModel.filteredCities) { city in
                     
-                        .foregroundColor(.blackDay)
-                }
-                
-                .padding(.vertical, 8)
-                .contentShape(Rectangle())
-                .onTapGesture {
-                    
-                    if isDeparture {
-                                navigationModel.open(.stationsDeparture(city: city))
-                            } else {
-                                navigationModel.open(.stationsArrival(city: city))
+                    HStack {
+                        Text(city.name)
+                            .font(.system(size: 17))
+                        Spacer()
+                        Image(systemName: "chevron.right")
+                        
+                            .foregroundColor(.blackDay)
                     }
+                    .padding(.vertical, 8)
+                    .contentShape(Rectangle())
+                    .onTapGesture {
+                        if isDeparture {
+                            navigationModel.open(.stationsDeparture(city: city))
+                        } else {
+                            navigationModel.open(.stationsArrival(city: city))
+                        }
+                    }
+                    
+                    .listRowSeparator(.hidden)
+                    
                 }
-                
-                .listRowSeparator(.hidden)
-                
+                .listStyle(PlainListStyle())
             }
-            .listStyle(PlainListStyle())
         }
         .navigationTitle("Выбор города")
-        .customBackButtonStyle(dismissAction: {
-            navigationModel.back()
-        })
-    }
-}
+               .customBackButtonStyle(dismissAction: {
+                   navigationModel.back()
+               })
+               .onAppear {
+                   if viewModel.cities.isEmpty {
+                       Task {
+                           await viewModel.loadCities()
+                       }
+                   }
+               }
+           }
+       }
 
 
 
 #Preview {
     
     CitySelectionView(isDeparture: true)
-        .environmentObject(CitySelectionViewModel())
         .environmentObject(NavigationViewModel())
 }
 

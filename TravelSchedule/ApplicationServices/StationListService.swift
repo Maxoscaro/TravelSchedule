@@ -7,7 +7,7 @@
 
 import Foundation
 
-typealias StationsList = Components.Schemas.Station
+typealias StationsList = Components.Schemas.StationListResponse
 
 protocol StationsListServiceProtocol {
     func getStationsList() async throws -> StationsList

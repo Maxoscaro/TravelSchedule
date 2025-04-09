@@ -7,6 +7,7 @@ struct MainScreenView: View {
     @EnvironmentObject var navigationModel: NavigationViewModel
     @EnvironmentObject var citySelectionViewModel: CitySelectionViewModel
     @EnvironmentObject var filterViewModel: FilterViewModel
+    @EnvironmentObject var stationsViewModel: StationSelectionViewModel
     
     var body: some View {
         ZStack {
@@ -34,8 +35,8 @@ struct MainScreenView: View {
                 .padding(.top, 24)
                 
                 DirectionsTextFieldView(
-                    selectedDeparture: $navigationModel.selectedDeparture,
-                    selectedArrival: $navigationModel.selectedArrival,
+                    selectedDeparture: $stationsViewModel.selectedDeparture,
+                    selectedArrival: $stationsViewModel.selectedArrival,
                     onTapFromCity: {
                         navigationModel.open(.citiesDeparture)
                     },
@@ -45,7 +46,7 @@ struct MainScreenView: View {
                 )
                 .padding(.top, 24)
                 
-                if !navigationModel.selectedDeparture.isEmpty && !navigationModel.selectedArrival.isEmpty {
+                if !stationsViewModel.selectedDeparture.isEmpty && !stationsViewModel.selectedArrival.isEmpty {
                     Button(action: {
                         filterViewModel.resetFilters()
                         navigationModel.open(.carrierList)
@@ -64,21 +65,21 @@ struct MainScreenView: View {
                 Spacer()
             }
             
-            if noInternet {
-                InternetErrorView()
-                    .background(Color.whiteDay)
-                    .edgesIgnoringSafeArea(.all)
-                    .zIndex(1)
-                    .transition(.opacity)
-            }
+//            if noInternet {
+//                InternetErrorView()
+//                    .background(Color.whiteDay)
+//                    .edgesIgnoringSafeArea(.all)
+//                    .zIndex(1)
+//                    .transition(.opacity)
+//            }
         }
-        .onAppear {
-            DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-                withAnimation {
-                    noInternet = false
-                }
-            }
-        }
+//        .onAppear {
+//            DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+//                withAnimation {
+//                    noInternet = false
+//                }
+//            }
+//        }
     }
 }
 
@@ -88,4 +89,5 @@ struct MainScreenView: View {
         .environmentObject(NavigationViewModel())
         .environmentObject(FilterViewModel())
         .environmentObject(StoryScreenViewModel())
+        .environmentObject(StationSelectionViewModel())
 }

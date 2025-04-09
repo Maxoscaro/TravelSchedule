@@ -10,10 +10,9 @@ import WebKit
 
 struct UserAgreementView: View {
     @Environment(\.dismiss) var dismiss
-    static var urlString = "https://yandex.ru/legal/practicum_offer"
       var body: some View {
           VStack {
-              WebView(urlString: UserAgreementView.urlString)
+              WebView(urlString: Constants.urlString)
           }
           .navigationTitle("Пользовательское соглашение")
           .customBackButtonStyle(dismissAction: {
@@ -38,7 +37,7 @@ struct UserAgreementView: View {
           loadURL(webView: uiView)
       }
       
-      private func loadURL(webView: WKWebView) {
+      @MainActor private func loadURL(webView: WKWebView) {
           if let url = URL(string: urlString), webView.url != url {
               webView.load(URLRequest(url: url))
           }

@@ -23,9 +23,7 @@ enum ScheduleScreens: Hashable {
 
 final class NavigationViewModel: ObservableObject {
     @Published var path: [ScheduleScreens] = []
-    @Published var selectedDeparture: String = ""
-    @Published var selectedArrival: String = ""
-    
+   
     func open(_ screen: ScheduleScreens) {
         path.append(screen)
     }

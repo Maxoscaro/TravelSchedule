@@ -1,13 +1,16 @@
 
 
 import SwiftUI
+@MainActor
 
-class FilterViewModel: ObservableObject {
+final class FilterViewModel: ObservableObject, Sendable {
     
     private var allSchedules = mockSchedule
     @Published var filteredSchedules: [ScheduleLocal] = []
     @Published var selectedTimes: Set<String> = []
     @Published var showTransfers: Bool? = nil
+    @Published var isLoading: Bool = false
+    @Published var isError: Bool = false
     
     let timePeriods = [
         "Утро 06:00 - 12:00",
@@ -23,6 +26,28 @@ class FilterViewModel: ObservableObject {
     init() {
         resetFilters()
     }
+    func loadSchedules(departure: String, arrival: String) async {
+        print("Запрашиваю расписание: departure=\(departure), arrival=\(arrival)")
+        isLoading = true
+        isError = false
+
+        let service = SearchRoutesNetworkService()
+        
+        do {
+            let scheduleSearch = try await service.searchRoutes(fromStationCode: departure, toStationCode: arrival)
+            let sortedSchedule = scheduleSearch.sorted { $0.date < $1.date }
+            
+            self.allSchedules = sortedSchedule
+            self.filteredSchedules = sortedSchedule
+            isLoading = false
+        } catch {
+            print("Ошибка при выполнении запроса: \(error)")
+            self.allSchedules = []
+            self.filteredSchedules = []
+            isLoading = false
+            isError = true
+            }
+        }
     
     func toggleTimeSelection(for period: String) {
         if selectedTimes.contains(period) {

@@ -8,8 +8,7 @@
 import SwiftUI
 
 struct SettingsView: View {
-    @State private var serverError = true
-    
+
     @EnvironmentObject var themeService: ThemeService
     
     var body: some View {
@@ -46,19 +45,8 @@ struct SettingsView: View {
             .foregroundColor(.blackDay)
             .font(.system(size: 17))
             
-            if serverError {
-                ServerErrorView()
-                    .background(Color.whiteDay)
-                    .edgesIgnoringSafeArea(.all)
-                    .zIndex(1)
-                    .transition(.opacity)
-            }
         }
-        .onAppear {
-            DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-                serverError = false
-            }
-        }
+
     }
 }
 

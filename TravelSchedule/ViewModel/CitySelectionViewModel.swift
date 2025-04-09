@@ -6,41 +6,60 @@
 
 import SwiftUI
 
-final class CitySelectionViewModel: ObservableObject {
+@MainActor
+final class CitySelectionViewModel: ObservableObject, Sendable {
     @Published var cities: [City] = []
     @Published var searchText: String = ""
-
-    init(selectedCity: City? = nil) {
-            self.cities = mockCities
-        }
+    @Published var isLoading: Bool = false
+    @Published var error: Error? = nil
+    @Published var showNetworkError: Bool = false
+    @Published var showServerError: Bool = false
     
-    let mockCities: [City] = [
-        City(name: "Москва", stations: [
-            Stations(name: "Киевский вокзал"),
-            Stations(name: "Курский вокзал"),
-            Stations(name: "Белорусский вокзал")
-        ]),
-        City(name: "Санкт-Петербург", stations: [
-            Stations(name: "Московский вокзал"),
-            Stations(name: "Финляндский вокзал"),
-            Stations(name: "Балтийский вокзал")
-        ]),
-        City(name: "Казань", stations: [
-            Stations(name: "Восстания"),
-            Stations(name: "Казань-Пасс."),
-            Stations(name: "Казань-2")
-        ]),
-        City(name: "Новосибирск", stations: [
-            Stations(name: "Новосибирск-Главный"),
-            Stations(name: "Новосибирск-Западный")
-        ]),
-        City(name: "Сочи", stations: [
-            Stations(name: "Адлер"),
-            Stations(name: "Хоста"),
-            Stations(name: "Сочи")
-        ])
-    ]
-
+    init() {
+        Task {
+            await loadCities()
+        }
+    }
+    
+    func loadCities() async {
+        isLoading = true
+        showNetworkError = false
+        showServerError = false
+        
+        do {
+            let service = CityStationService()
+            let citiesFromNetwork = try await service.stationsList()
+            let sorted = citiesFromNetwork.filter { !$0.stations.isEmpty }
+            let sortedCity = sorted
+                .filter { !$0.name.isEmpty && !$0.stations.isEmpty }
+                .sorted { $0.name < $1.name }
+            DispatchQueue.main.async {
+                self.cities = sortedCity
+                self.isLoading = false
+            }
+        } catch let error as URLError {
+            DispatchQueue.main.async {
+                self.error = error
+                self.isLoading = false
+                
+                if error.code == .notConnectedToInternet ||
+                    error.code == .networkConnectionLost ||
+                    error.code == .timedOut {
+                    self.showNetworkError = true
+                } else {
+                    self.showServerError = true
+                }
+            }
+        } catch {
+            print("Неизвестная ошибка: \(error)")
+            DispatchQueue.main.async {
+                self.error = error
+                self.isLoading = false
+                self.showServerError = true
+            }
+        }
+    }
+    
     var filteredCities: [City] {
         if searchText.isEmpty {
             return cities
@@ -48,8 +67,4 @@ final class CitySelectionViewModel: ObservableObject {
             return cities.filter { $0.name.localizedCaseInsensitiveContains(searchText) }
         }
     }
-    
-    
-  
-    }
-
+}
