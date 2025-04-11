@@ -29,8 +29,7 @@ final class CitySelectionViewModel: ObservableObject, Sendable {
         do {
             let service = CityStationService()
             let citiesFromNetwork = try await service.stationsList()
-            let sorted = citiesFromNetwork.filter { !$0.stations.isEmpty }
-            let sortedCity = sorted
+            let sortedCity = citiesFromNetwork
                 .filter { !$0.name.isEmpty && !$0.stations.isEmpty }
                 .sorted { $0.name < $1.name }
             DispatchQueue.main.async {

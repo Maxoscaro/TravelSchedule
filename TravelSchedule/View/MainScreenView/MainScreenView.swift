@@ -64,22 +64,7 @@ struct MainScreenView: View {
                 }
                 Spacer()
             }
-            
-//            if noInternet {
-//                InternetErrorView()
-//                    .background(Color.whiteDay)
-//                    .edgesIgnoringSafeArea(.all)
-//                    .zIndex(1)
-//                    .transition(.opacity)
-//            }
         }
-//        .onAppear {
-//            DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-//                withAnimation {
-//                    noInternet = false
-//                }
-//            }
-//        }
     }
 }
 

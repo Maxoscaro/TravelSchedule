@@ -32,12 +32,12 @@ actor CityStationService: Sendable {
             .first(where: { $0.title == "Россия" })?
             .regions ?? []
 
-        var result: [City] = []
+        var cities: [City] = []
 
         for region in russianRegions {
-            let settlements = region.settlements ?? []
+            let cityName = region.settlements ?? []
             
-            for settlement in settlements {
+            for settlement in cityName {
                 guard let title = settlement.title,
                       let stations = settlement.stations else { continue }
 
@@ -54,11 +54,11 @@ actor CityStationService: Sendable {
                 }
 
                 if !filteredStations.isEmpty {
-                    result.append(City(name: title, stations: filteredStations.sorted(by: { $0.name < $1.name })))
+                    cities.append(City(name: title, stations: filteredStations.sorted(by: { $0.name < $1.name })))
                 }
             }
         }
 
-        return result
+        return cities
     }
 }
