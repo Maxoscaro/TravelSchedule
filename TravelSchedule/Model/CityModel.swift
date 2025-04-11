@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct City:  Identifiable, Hashable {
+struct City:  Identifiable, Hashable, Sendable {
     let id = UUID()
     let name: String
     let stations: [Stations]

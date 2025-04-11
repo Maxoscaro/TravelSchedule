@@ -8,7 +8,8 @@
 import SwiftUI
 import Combine
 
-final class StoryScreenViewModel: ObservableObject {
+@MainActor
+final class StoryScreenViewModel: ObservableObject, Sendable {
     
     @Published var stories: [StoriesModel]
     @Published var progress: CGFloat = 0

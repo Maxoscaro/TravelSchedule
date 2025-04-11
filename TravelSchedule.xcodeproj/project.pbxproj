@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		B50C1B4E2D9C59B10031D541 /* MaskView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B50C1B4D2D9C59B10031D541 /* MaskView.swift */; };
+		B50C1B502DA0131B0031D541 /* CityStationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B50C1B4F2DA0131B0031D541 /* CityStationService.swift */; };
+		B50C1B572DA53AB40031D541 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = B50C1B562DA53AB40031D541 /* Constants.swift */; };
+		B50C1B612DA693690031D541 /* SearchRoutesNetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B50C1B602DA693690031D541 /* SearchRoutesNetworkService.swift */; };
 		B528967A2D54C18300A41FDA /* TravelScheduleApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B52896792D54C18300A41FDA /* TravelScheduleApp.swift */; };
 		B528967E2D54C18A00A41FDA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B528967D2D54C18A00A41FDA /* Assets.xcassets */; };
 		B52896812D54C18A00A41FDA /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B52896802D54C18A00A41FDA /* Preview Assets.xcassets */; };
@@ -17,7 +20,7 @@
 		B55348AB2D6770110079101F /* CarrierService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B55348AA2D6770110079101F /* CarrierService.swift */; };
 		B55348AD2D6773D00079101F /* CopyrightService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B55348AC2D6773D00079101F /* CopyrightService.swift */; };
 		B55348AF2D6774160079101F /* StationListService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B55348AE2D6774160079101F /* StationListService.swift */; };
-		B55348B12D67795D0079101F /* TreadStationsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B55348B02D67795D0079101F /* TreadStationsService.swift */; };
+		B55348B12D67795D0079101F /* ThreadStationsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B55348B02D67795D0079101F /* ThreadStationsService.swift */; };
 		B55348B32D677CEE0079101F /* SearchRouteService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B55348B22D677CEE0079101F /* SearchRouteService.swift */; };
 		B55348B52D688D090079101F /* StationScheduleService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B55348B42D688D090079101F /* StationScheduleService.swift */; };
 		B55348B72D6896870079101F /* TravelScheduleService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B55348B62D6896870079101F /* TravelScheduleService.swift */; };
@@ -32,7 +35,6 @@
 		B5EA26C12D8D90BE00D39349 /* CitySelectionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5EA26BB2D8D90BE00D39349 /* CitySelectionViewModel.swift */; };
 		B5EA26C32D8D90BE00D39349 /* FilterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5EA26BD2D8D90BE00D39349 /* FilterViewModel.swift */; };
 		B5EA26C42D8D90BE00D39349 /* StationSelectionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5EA26BE2D8D90BE00D39349 /* StationSelectionViewModel.swift */; };
-		B5EA26C52D8D90BE00D39349 /* CarriersScreenViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5EA26BF2D8D90BE00D39349 /* CarriersScreenViewModel.swift */; };
 		B5EA26C62D8D90BE00D39349 /* StoryScreenViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5EA26C02D8D90BE00D39349 /* StoryScreenViewModel.swift */; };
 		B5EA26CF2D8D90E200D39349 /* NavigationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5EA26C82D8D90E200D39349 /* NavigationViewModel.swift */; };
 		B5EA26D02D8D90E200D39349 /* CityModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5EA26C92D8D90E200D39349 /* CityModel.swift */; };
@@ -87,6 +89,9 @@
 
 /* Begin PBXFileReference section */
 		B50C1B4D2D9C59B10031D541 /* MaskView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MaskView.swift; sourceTree = "<group>"; };
+		B50C1B4F2DA0131B0031D541 /* CityStationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityStationService.swift; sourceTree = "<group>"; };
+		B50C1B562DA53AB40031D541 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		B50C1B602DA693690031D541 /* SearchRoutesNetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchRoutesNetworkService.swift; sourceTree = "<group>"; };
 		B52896762D54C18300A41FDA /* TravelSchedule.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TravelSchedule.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B52896792D54C18300A41FDA /* TravelScheduleApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TravelScheduleApp.swift; sourceTree = "<group>"; };
 		B528967D2D54C18A00A41FDA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -99,7 +104,7 @@
 		B55348AA2D6770110079101F /* CarrierService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarrierService.swift; sourceTree = "<group>"; };
 		B55348AC2D6773D00079101F /* CopyrightService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CopyrightService.swift; sourceTree = "<group>"; };
 		B55348AE2D6774160079101F /* StationListService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationListService.swift; sourceTree = "<group>"; };
-		B55348B02D67795D0079101F /* TreadStationsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TreadStationsService.swift; sourceTree = "<group>"; };
+		B55348B02D67795D0079101F /* ThreadStationsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThreadStationsService.swift; sourceTree = "<group>"; };
 		B55348B22D677CEE0079101F /* SearchRouteService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchRouteService.swift; sourceTree = "<group>"; };
 		B55348B42D688D090079101F /* StationScheduleService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationScheduleService.swift; sourceTree = "<group>"; };
 		B55348B62D6896870079101F /* TravelScheduleService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TravelScheduleService.swift; sourceTree = "<group>"; };
@@ -112,7 +117,6 @@
 		B5EA26BB2D8D90BE00D39349 /* CitySelectionViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CitySelectionViewModel.swift; sourceTree = "<group>"; };
 		B5EA26BD2D8D90BE00D39349 /* FilterViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilterViewModel.swift; sourceTree = "<group>"; };
 		B5EA26BE2D8D90BE00D39349 /* StationSelectionViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StationSelectionViewModel.swift; sourceTree = "<group>"; };
-		B5EA26BF2D8D90BE00D39349 /* CarriersScreenViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CarriersScreenViewModel.swift; sourceTree = "<group>"; };
 		B5EA26C02D8D90BE00D39349 /* StoryScreenViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoryScreenViewModel.swift; sourceTree = "<group>"; };
 		B5EA26C82D8D90E200D39349 /* NavigationViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationViewModel.swift; sourceTree = "<group>"; };
 		B5EA26C92D8D90E200D39349 /* CityModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CityModel.swift; sourceTree = "<group>"; };
@@ -175,6 +179,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B50C1B552DA53A970031D541 /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				B50C1B562DA53AB40031D541 /* Constants.swift */,
+			);
+			path = Constants;
+			sourceTree = "<group>";
+		};
 		B528966D2D54C18300A41FDA = {
 			isa = PBXGroup;
 			children = (
@@ -198,6 +210,7 @@
 		B52896782D54C18300A41FDA /* TravelSchedule */ = {
 			isa = PBXGroup;
 			children = (
+				B50C1B552DA53A970031D541 /* Constants */,
 				B5F8333D2D96BC950088C634 /* ViewModifiers */,
 				B52896792D54C18300A41FDA /* TravelScheduleApp.swift */,
 				B5EA26FD2D8D91FE00D39349 /* Service */,
@@ -246,10 +259,12 @@
 				B55348AA2D6770110079101F /* CarrierService.swift */,
 				B55348AC2D6773D00079101F /* CopyrightService.swift */,
 				B55348AE2D6774160079101F /* StationListService.swift */,
-				B55348B02D67795D0079101F /* TreadStationsService.swift */,
+				B55348B02D67795D0079101F /* ThreadStationsService.swift */,
 				B55348B22D677CEE0079101F /* SearchRouteService.swift */,
 				B55348B42D688D090079101F /* StationScheduleService.swift */,
 				B55348B62D6896870079101F /* TravelScheduleService.swift */,
+				B50C1B4F2DA0131B0031D541 /* CityStationService.swift */,
+				B50C1B602DA693690031D541 /* SearchRoutesNetworkService.swift */,
 			);
 			path = ApplicationServices;
 			sourceTree = "<group>";
@@ -261,7 +276,6 @@
 				B5EA26BB2D8D90BE00D39349 /* CitySelectionViewModel.swift */,
 				B5EA26BD2D8D90BE00D39349 /* FilterViewModel.swift */,
 				B5EA26BE2D8D90BE00D39349 /* StationSelectionViewModel.swift */,
-				B5EA26BF2D8D90BE00D39349 /* CarriersScreenViewModel.swift */,
 				B5EA26C02D8D90BE00D39349 /* StoryScreenViewModel.swift */,
 			);
 			path = ViewModel;
@@ -585,11 +599,12 @@
 			files = (
 				B5EA26F52D8D911B00D39349 /* SettingsView.swift in Sources */,
 				B5EA26ED2D8D911B00D39349 /* CarriersScreenView.swift in Sources */,
-				B5EA26C52D8D90BE00D39349 /* CarriersScreenViewModel.swift in Sources */,
+				B50C1B612DA693690031D541 /* SearchRoutesNetworkService.swift in Sources */,
 				B55348AB2D6770110079101F /* CarrierService.swift in Sources */,
 				B5F8334E2D96C0410088C634 /* MaskFragmentView.swift in Sources */,
 				B5EA26D12D8D90E200D39349 /* ScheduleModel.swift in Sources */,
 				B5EA26FF2D8D91FE00D39349 /* ThemeService.swift in Sources */,
+				B50C1B572DA53AB40031D541 /* Constants.swift in Sources */,
 				B5EA26C62D8D90BE00D39349 /* StoryScreenViewModel.swift in Sources */,
 				B5F8334D2D96C0410088C634 /* CloseButton.swift in Sources */,
 				B5D405482D5CC35400CCAB2C /* NearestStationService.swift in Sources */,
@@ -616,10 +631,11 @@
 				B50C1B4E2D9C59B10031D541 /* MaskView.swift in Sources */,
 				B5EA26EE2D8D911B00D39349 /* CarrierScreenView.swift in Sources */,
 				B5EA26C42D8D90BE00D39349 /* StationSelectionViewModel.swift in Sources */,
-				B55348B12D67795D0079101F /* TreadStationsService.swift in Sources */,
+				B55348B12D67795D0079101F /* ThreadStationsService.swift in Sources */,
 				B5EA26FB2D8D911B00D39349 /* ContentView.swift in Sources */,
 				B5F833522D96C0410088C634 /* StoriesView.swift in Sources */,
 				B55348AF2D6774160079101F /* StationListService.swift in Sources */,
+				B50C1B502DA0131B0031D541 /* CityStationService.swift in Sources */,
 				B5EA26F32D8D911B00D39349 /* CheckBoxRowView.swift in Sources */,
 				B5EA26D22D8D90E200D39349 /* CustomBackButtonViewModifier.swift in Sources */,
 				B5EA26FA2D8D911B00D39349 /* MainScreenView.swift in Sources */,
@@ -733,6 +749,7 @@
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_STRICT_CONCURRENCY = complete;
 			};
 			name = Debug;
 		};
@@ -788,6 +805,7 @@
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_STRICT_CONCURRENCY = complete;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;

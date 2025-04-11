@@ -13,8 +13,11 @@ struct CarrierCard: View {
         var body: some View {
             VStack {
                 HStack(alignment: schedule.transferPoint != nil ? .top : .center) {
-                    Image(schedule.carrier.logoSvg)
-                        .resizable()
+                    AsyncImage(url: URL(string: schedule.carrier.logo)) { image in
+                        image
+                            .image?.resizable()
+                    }
+                    
                         .frame(width: 38, height: 38)
                         .clipShape(RoundedRectangle(cornerRadius: 12))
                         .padding(.trailing, 8)
@@ -62,7 +65,7 @@ struct CarrierCard: View {
         }
     }
 
-    #Preview {
-        CarrierCard(schedule: mockSchedule[0])
-            .padding()
-    }
+//    #Preview {
+//        CarrierCard(schedule: mockSchedule[0])
+//            .padding()
+//    }

@@ -6,8 +6,8 @@
 //
 
 import SwiftUI
-
-final class ThemeService: ObservableObject {
+@MainActor
+final class ThemeService: ObservableObject, Sendable {
     @AppStorage("isDarkMode") var isDarkMode: Bool = false {
         didSet {
             applyTheme()

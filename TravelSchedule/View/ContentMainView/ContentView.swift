@@ -13,6 +13,7 @@ struct ContentView: View {
     @StateObject var navigationModel = NavigationViewModel()
     @StateObject private var filterViewModel = FilterViewModel()
     @StateObject private var storyViewModel = StoryScreenViewModel()
+    @StateObject private var stationViewModel = StationSelectionViewModel()
     
     init() {
         let appearance = UITabBarAppearance()
@@ -73,6 +74,7 @@ struct ContentView: View {
         .environmentObject(filterViewModel)
         .environmentObject(navigationModel)
         .environmentObject(storyViewModel)
+        .environmentObject(stationViewModel)
     }
 }
 

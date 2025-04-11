@@ -60,7 +60,7 @@ struct CarrierScreenView: View {
     }
 }
 
-#Preview {
-    CarrierScreenView(carrier: mockCarriers[0])
-        .environmentObject(NavigationViewModel())
-}
+//#Preview {
+//    CarrierScreenView(carrier: mockCarriers[0])
+//        .environmentObject(NavigationViewModel())
+//}

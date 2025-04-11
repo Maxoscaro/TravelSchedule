@@ -12,7 +12,7 @@ struct DirectionsTextFieldView: View {
     @Binding var selectedDeparture: String
     @Binding var selectedArrival: String
     
-    @EnvironmentObject var navigationModel: NavigationViewModel
+    @EnvironmentObject var stationsModel: StationSelectionViewModel
     var onTapFromCity: () -> Void = {}
     var onTapToCity: () -> Void = {}
     
@@ -29,9 +29,9 @@ struct DirectionsTextFieldView: View {
                         onTapFromCity()
                     }) {
                         HStack {
-                            Text(navigationModel.selectedDeparture.isEmpty ? "Откуда" : navigationModel.selectedDeparture)
+                            Text(stationsModel.selectedDeparture.isEmpty ? "Откуда" : stationsModel.selectedDeparture)
                                 .font(.system(size: 17))
-                                .foregroundColor(navigationModel.selectedDeparture.isEmpty ? .gray : .black)
+                                .foregroundColor(stationsModel.selectedDeparture.isEmpty ? .gray : .black)
                                 .frame(maxWidth: .infinity, alignment: .leading)
                                 .multilineTextAlignment(.leading)
                                 .lineLimit(1)
@@ -45,9 +45,9 @@ struct DirectionsTextFieldView: View {
                         onTapToCity()
                     }) {
                         HStack {
-                            Text(navigationModel.selectedArrival.isEmpty ? "Куда" : navigationModel.selectedArrival)
+                            Text(stationsModel.selectedArrival.isEmpty ? "Куда" : stationsModel.selectedArrival)
                                 .font(.system(size: 17))
-                                .foregroundColor(navigationModel.selectedArrival.isEmpty ? .gray : .black)
+                                .foregroundColor(stationsModel.selectedArrival.isEmpty ? .gray : .black)
                                 .frame(maxWidth: .infinity, alignment: .leading)
                                 .multilineTextAlignment(.leading)
                                 .lineLimit(1)
@@ -71,9 +71,9 @@ struct DirectionsTextFieldView: View {
             
             Button(action: {
                 
-                let tempDeparture = navigationModel.selectedDeparture
-                navigationModel.selectedDeparture = navigationModel.selectedArrival
-                navigationModel.selectedArrival = tempDeparture
+                let tempDeparture = stationsModel.selectedDeparture
+                stationsModel.selectedDeparture = stationsModel.selectedArrival
+                stationsModel.selectedArrival = tempDeparture
             }) {
                 ZStack {
                     Circle()
@@ -98,6 +98,6 @@ struct DirectionsTextFieldView: View {
         onTapFromCity: {},
         onTapToCity: {}
     )
-    .environmentObject(NavigationViewModel())
+    .environmentObject(StationSelectionViewModel())
 }
 

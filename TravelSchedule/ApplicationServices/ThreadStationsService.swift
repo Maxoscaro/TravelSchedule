@@ -13,7 +13,7 @@ protocol ThreadStationsServiceProtocol {
     func getThreadInfo(uid: String) async throws -> Thread
 }
 
-final class TreadStationsService: ThreadStationsServiceProtocol {
+actor TreadStationsService: ThreadStationsServiceProtocol, Sendable {
     private let client: Client
     private let apikey: String
     

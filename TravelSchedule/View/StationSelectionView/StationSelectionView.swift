@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct StationSelectionView: View {
-    @StateObject var viewModel = StationSelectionViewModel()
+    @EnvironmentObject var viewModel: StationSelectionViewModel
     @EnvironmentObject var navigationModel: NavigationViewModel
     
     let city: City
@@ -59,11 +59,15 @@ struct StationSelectionView: View {
             .padding(.vertical, 8)
             .contentShape(Rectangle())
             .onTapGesture {
-                let result = city.name + " (" + station.name + ")"
+               
                 if isDeparture {
-                    navigationModel.selectedDeparture = result
+                    viewModel.departureStation = station
+                    viewModel.departureCity = city
+                    viewModel.createDepartureText()
                 } else {
-                    navigationModel.selectedArrival = result
+                    viewModel.arrivalStation = station
+                    viewModel.arrivalCity = city
+                    viewModel.createArrivalText()
                 }
                 navigationModel.backToRoot()
             }

@@ -197,12 +197,14 @@ paths:
           default: ru
       responses:
         "200":
-          description: Успешный ответ в формате HTML
+          description: Успешный ответ
           content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/StationListResponse'
             text/html:
               schema:
                 type: string
-                description: HTML страница со списком станций
   
   /v3.0/search/:
     get:
@@ -501,6 +503,37 @@ paths:
 
 components:
   schemas:
+
+    StationListResponse:
+      type: object
+      properties:
+        countries:
+          type: array
+          items:
+            $ref: '#/components/schemas/Country'
+
+    Country:
+      type: object
+      properties:
+        regions:
+          type: array
+          items:
+            $ref: '#/components/schemas/Region'
+        title:
+          type: string
+
+    Region:
+      type: object
+      properties:
+        title:
+          type: string
+        codes:
+          $ref: '#/components/schemas/StationCodes'
+        settlements:
+          type: array
+          items:
+            $ref: '#/components/schemas/Settlement'
+
     SearchResponse:
       type: object
       properties:
@@ -534,9 +567,9 @@ components:
         thread:
           $ref: '#/components/schemas/Thread'
         departure:
-          $ref: '#/components/schemas/SegmentStation'
+           type: string
         arrival:
-          $ref: '#/components/schemas/SegmentStation'
+           type: string
         duration:
           type: integer
           description: Длительность в минутах
@@ -548,6 +581,14 @@ components:
             $ref: '#/components/schemas/Transfer'
         tickets_info:
           $ref: '#/components/schemas/TicketsInfo'
+        start_date:
+          type: string
+        stops:
+          type: string
+        from:
+          $ref: '#/components/schemas/Station'
+        to:
+          $ref: '#/components/schemas/Station'
 
     Thread:
       type: object
@@ -574,6 +615,9 @@ components:
     SegmentStation:
       type: object
       properties:
+        
+        codes:
+          $ref: \'#/components/schemas/StationCodes\'
         station:
           $ref: '#/components/schemas/Station'
         datetime:
@@ -585,6 +629,14 @@ components:
           type: string
         days:
           type: string
+
+
+    StationCodes:
+      type: object
+      properties:
+        yandex_code:
+          type: string
+
 
     Transfer:
       type: object
@@ -642,7 +694,7 @@ components:
     Station:
       type: object
       properties:
-        code:
+        type:
           type: string
         title:
           type: string
@@ -654,7 +706,10 @@ components:
           type: number
         lng:
           type: number
-        
+        codes:
+          $ref: '#/components/schemas/StationCodes'
+    
+
     Settlements:
       type: object
       properties:
@@ -680,15 +735,21 @@ components:
           type: number
         lng:
           type: number
+        stations:
+          type: array
+          items:
+            $ref: '#/components/schemas/Station'
         
     CarrierInfo:
       type: object
       properties:
         code:
-          type: string
+          type: integer
         title:
           type: string
         logo_svg:
+          type: string
+        logo:
           type: string
         url:
           type: string
@@ -698,8 +759,8 @@ components:
           type: string
         email:
           type: string
-        phones:
-          type: array
+        phone:
+          type: string
           items:
             type: string
             

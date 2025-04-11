@@ -6,8 +6,8 @@
 //
 
 import Foundation
-
-final class FetchDataController: ObservableObject {
+@MainActor
+final class FetchDataController: ObservableObject, Sendable {
     
     private let service = TravelScheduleService.shared
     
